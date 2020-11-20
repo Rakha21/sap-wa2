@@ -332,7 +332,7 @@ module.exports = HandleMsg = async (aruga, message) => {
                         hehex += '╠➥ '
                         hehex += response.data.data[i].name.transliteration.id.toLowerCase() + '\n'
                             }
-                        hehex += '╚═〘 🔰 *BOT ./MrG3P5* 🔰 〙'
+                        hehex += '╚═〘 🔰 *BOT RAKHA* 🔰 〙'
                     aruga.reply(from, hehex, id)
                 })
             } catch(err) {
@@ -905,7 +905,7 @@ module.exports = HandleMsg = async (aruga, message) => {
                 hehex += '╠➥'
                 hehex += ` @${groupMem[i].id.replace(/@c.us/g, '')}\n`
             }
-            hehex += '╚═〘 🔰 *BOT ./MrG3P5* 🔰 〙'
+            hehex += '╚═〘 🔰 *BOT RAKHA* 🔰 〙'
             await aruga.sendTextWithMentions(from, hehex)
             break
 		case 'simisimi':
