@@ -163,7 +163,7 @@ module.exports = HandleMsg = async (aruga, message) => {
                 await aruga.joinGroupViaLink(linkgrup)
                       .then(async () => {
                           await aruga.sendText(from, 'Berhasil join grup via link!')
-                          await aruga.sendText(chekgrup.id, `Hai Penghuni sini\nIm 🔰 *BOT ./MrG3P5* 🔰 \nUntuk memunculkan fitur ketik ${prefix}menu`)
+                          await aruga.sendText(chekgrup.id, `Hai Penghuni sini\nIm 🔰 *BOT RAKHA* 🔰 \nUntuk memunculkan fitur ketik ${prefix}menu`)
                       })
             } else {
                 let cgrup = await aruga.getAllGroups()
@@ -332,7 +332,7 @@ module.exports = HandleMsg = async (aruga, message) => {
                         hehex += '╠➥ '
                         hehex += response.data.data[i].name.transliteration.id.toLowerCase() + '\n'
                             }
-                        hehex += '╚═〘 🔰 *BOT ./MrG3P5* 🔰 〙'
+                        hehex += '╚═〘 🔰 *BOT RAKHA* 🔰 〙'
                     aruga.reply(from, hehex, id)
                 })
             } catch(err) {
@@ -632,7 +632,7 @@ module.exports = HandleMsg = async (aruga, message) => {
             })
             break
         case 'nekopoi':
-            aruga.sendText(from, `Maaf fitur ini sedang dalam perbaikan...`)
+            aruga.sendText(from, `Masih Dalam Perbaikan Tolol Dasar Bocah Sangean!`)
             /* rugapoi.getLatest()
             .then((result) => {
                 rugapoi.getVideo(result.link)
@@ -905,7 +905,7 @@ module.exports = HandleMsg = async (aruga, message) => {
                 hehex += '╠➥'
                 hehex += ` @${groupMem[i].id.replace(/@c.us/g, '')}\n`
             }
-            hehex += '╚═〘 🔰 *BOT ./MrG3P5* 🔰 〙'
+            hehex += '╚═〘 🔰 *BOT RAKHA* 🔰 〙'
             await aruga.sendTextWithMentions(from, hehex)
             break
 		case 'simisimi':
@@ -1005,8 +1005,8 @@ module.exports = HandleMsg = async (aruga, message) => {
             const chatz = await aruga.getAllChatIds()
             for (let idk of chatz) {
                 var cvk = await aruga.getChatById(idk)
-                if (!cvk.isReadOnly) aruga.sendText(idk, `〘 🔰 *BOT ./MrG3P5* 🔰 〙\n\n${msg}`)
-                if (cvk.isReadOnly) aruga.sendText(idk, `〘 🔰 *BOT ./MrG3P5* 🔰 〙\n\n${msg}`)
+                if (!cvk.isReadOnly) aruga.sendText(idk, `〘 🔰 *BOT RAKHA* 🔰 〙\n\n${msg}`)
+                if (cvk.isReadOnly) aruga.sendText(idk, `〘 🔰 *BOT RAKHA* 🔰 〙\n\n${msg}`)
             }
             aruga.reply(from, 'Broadcast Success!', id)
             break
@@ -1053,24 +1053,24 @@ module.exports = HandleMsg = async (aruga, message) => {
                 const isIn = inArray(pengirim, cekuser)
                 if(cekuser && isIn !== false){
                     if(isKasar){
-                        const denda = db.get('group').filter({id: groupId}).map('members['+isIn+']').find({ id: pengirim }).update('denda', n => n + 5000).write()
+                        const denda = db.get('group').filter({id: groupId}).map('members['+isIn+']').find({ id: pengirim }).update('denda', n => n + 10.000.000.000).write()
                         if(denda){
-                            await aruga.reply(from, "Jangan badword bodoh\nDenda +5.000\nTotal : Rp"+formatin(denda.denda), id)
+                            await aruga.reply(from, "Jangan Toxic Anjeng!\nDenda +10.000.000..000\nTotal : Rp"+formatin(denda.denda), id)
                         }
                     }
                 } else {
                     const cekMember = db.get('group').filter({id: groupId}).map('members').value()[0]
                     if(cekMember.length === 0){
                         if(isKasar){
-                            db.get('group').find({ id: groupId }).set('members', [{id: pengirim, denda: 5000}]).write()
+                            db.get('group').find({ id: groupId }).set('members', [{id: pengirim, denda: 10.000.000.000}]).write()
                         } else {
                             db.get('group').find({ id: groupId }).set('members', [{id: pengirim, denda: 0}]).write()
                         }
                     } else {
                         const cekuser = db.get('group').filter({id: groupId}).map('members').value()[0]
                         if(isKasar){
-                            cekuser.push({id: pengirim, denda: 5000})
-                            await aruga.reply(from, "Jangan badword bodoh\nDenda +5.000", id)
+                            cekuser.push({id: pengirim, denda: 10.000.000.000})
+                            await aruga.reply(from, "Jangan Toxic Anjeng!\nDenda +10.000.000.000", id)
                         } else {
                             cekuser.push({id: pengirim, denda: 0})
                         }
@@ -1079,8 +1079,8 @@ module.exports = HandleMsg = async (aruga, message) => {
                 }
             } else {
                 if(isKasar){
-                    db.get('group').push({ id: groupId, members: [{id: pengirim, denda: 5000}] }).write()
-                    await aruga.reply(from, "Jangan badword bodoh\nDenda +5.000\nTotal : Rp5.000", id)
+                    db.get('group').push({ id: groupId, members: [{id: pengirim, denda: 10.000.000.000}] }).write()
+                    await aruga.reply(from, "Jangan Toxic Anjeng!\nDenda +5.000\nTotal : Rp10.000.000.000", id)
                 } else {
                     db.get('group').push({ id: groupId, members: [{id: pengirim, denda: 0}] }).write()
                 }
