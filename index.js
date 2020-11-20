@@ -6,9 +6,9 @@ const HandleMsg = require('./HandleMsg')
 
 const start = (aruga = new Client()) => {
     console.log(color(figlet.textSync('----------------', { horizontalLayout: 'default' })))
-    console.log(color(figlet.textSync('BOT MrG3P5', { font: 'Ghost', horizontalLayout: 'default' })))
+    console.log(color(figlet.textSync('BOT RAKHA', { font: 'Ghost', horizontalLayout: 'default' })))
     console.log(color(figlet.textSync('----------------', { horizontalLayout: 'default' })))
-    console.log(color('[DEV]'), color('MrG3P5', 'yellow'))
+    console.log(color('[DEV]'), color('RAKHA21', 'yellow'))
     console.log(color('[~>>]'), color('BOT Started!', 'green'))
 
     // Mempertahankan sesi agar tetap nyala
@@ -35,7 +35,7 @@ const start = (aruga = new Client()) => {
 	    })
 	    } else {
         await aruga.simulateTyping(chat.id, true).then(async () => {
-          await aruga.sendText(chat.id, `Hai Penghuni sini\nIm 🔰 *BOT ./MrG3P5* 🔰 \nUntuk memunculkan fitur ketik ${prefix}menu`)
+          await aruga.sendText(chat.id, `Hai Penghuni sini\nIm 🔰 *BOT RAKHA* 🔰 \nUntuk memunculkan fitur ketik ${prefix}menu`)
         })
 	    }
 	}
@@ -46,7 +46,7 @@ const start = (aruga = new Client()) => {
         const host = await aruga.getHostNumber() + '@c.us'
         // kondisi ketika seseorang diinvite/join group lewat link
         if (event.action === 'add' && event.who !== host) {
-            await aruga.sendTextWithMentions(event.chat, `Hello @${event.who.replace('@c.us', '')} \nSelamat Datang DiGrup Sini\nSemoga Tidak Betah✨`)
+            await aruga.sendTextWithMentions(event.chat, `Hello @${event.who.replace('@c.us', '')} \nSelamat Datang DiGrup ini\nSemoga Tidak Betah✨`)
         }
         // kondisi ketika seseorang dikick/keluar dari group
         if (event.action === 'remove' && event.who !== host) {
@@ -56,7 +56,7 @@ const start = (aruga = new Client()) => {
 
     aruga.onIncomingCall(async (callData) => {
         // ketika seseorang menelpon nomor bot akan mengirim pesan
-        await aruga.sendText(callData.peerJid, 'Maaf sedang tidak bisa menerima panggilan.\n\n🔰 *BOT ./MrG3P5* 🔰')
+        await aruga.sendText(callData.peerJid, 'Maaf sedang tidak bisa menerima panggilan.\n\n🔰 *BOT RAKHA* 🔰')
         .then(async () => {
             // bot akan memblock nomor itu
             await aruga.contactBlock(callData.peerJid)
