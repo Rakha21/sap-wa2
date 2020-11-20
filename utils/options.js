@@ -6,7 +6,7 @@
 
 module.exports = options = (headless, start) => {
     const options = {
-        sessionId: 'ARUGA',
+        sessionId: 'RAKHA',
         headless: headless,
         qrTimeout: 0,
         authTimeout: 0,
