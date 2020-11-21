@@ -35,7 +35,7 @@ const start = (aruga = new Client()) => {
 	    })
 	    } else {
         await aruga.simulateTyping(chat.id, true).then(async () => {
-          await aruga.sendText(chat.id, `Hai Penghuni sini\nIm 🔰 *BOT RAKHA* 🔰 \nUntuk memunculkan fitur ketik ${prefix}menu`)
+          await aruga.sendText(chat.id, `Hai Penghuni sini\nIm ⚔️ *BOT RAKHA* ⚔️ \nUntuk memunculkan fitur ketik ${prefix}menu`)
         })
 	    }
 	}
@@ -46,17 +46,17 @@ const start = (aruga = new Client()) => {
         const host = await aruga.getHostNumber() + '@c.us'
         // kondisi ketika seseorang diinvite/join group lewat link
         if (event.action === 'add' && event.who !== host) {
-            await aruga.sendTextWithMentions(event.chat, `Hello @${event.who.replace('@c.us', '')} \nSelamat Datang DiGrup ini\nSemoga Tidak Betah✨`)
+            await aruga.sendTextWithMentions(event.chat, `Hello @${event.who.replace('@c.us', '')} \nSelamat Datang DiGrup ini\nSemoga Tidak Betah🔪`)
         }
         // kondisi ketika seseorang dikick/keluar dari group
         if (event.action === 'remove' && event.who !== host) {
-            await aruga.sendTextWithMentions(event.chat, `@${event.who.replace('@c.us', '')}\n Telah Meninggal Dunia\nSemoga Tenang DiAlam Sana✨`)
+            await aruga.sendTextWithMentions(event.chat, `@${event.who.replace('@c.us', '')}\n Telah Meninggal Dunia\nSelamat menempuh hidup baru🔪`)
         }
     })
 
     aruga.onIncomingCall(async (callData) => {
         // ketika seseorang menelpon nomor bot akan mengirim pesan
-        await aruga.sendText(callData.peerJid, 'Maaf sedang tidak bisa menerima panggilan.\n\n🔰 *BOT RAKHA* 🔰')
+        await aruga.sendText(callData.peerJid, 'Maaf sedang tidak bisa menerima panggilan.\n\n⚔️ *BOT RAKHA* ⚔️')
         .then(async () => {
             // bot akan memblock nomor itu
             await aruga.contactBlock(callData.peerJid)
