@@ -1,3 +1,7 @@
+<p align="center">
+<img src="https://media.giphy.com/media/3oGRFAUNzSHAMWZLxe/giphy.gif" alt="GIF" width="128" height="128"/>
+</p>
+
 ## Features
 
 | 18+ |Yes|
