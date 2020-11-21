@@ -8,7 +8,7 @@ const start = (aruga = new Client()) => {
     console.log(color(figlet.textSync('----------------', { horizontalLayout: 'default' })))
     console.log(color(figlet.textSync('BOT RAKHA', { font: 'Ghost', horizontalLayout: 'default' })))
     console.log(color(figlet.textSync('----------------', { horizontalLayout: 'default' })))
-    console.log(color('[DEV]'), color('RAKHA21', 'yellow'))
+    console.log(color('[DEV]'), color('RAKHA', 'yellow'))
     console.log(color('[~>>]'), color('BOT Started!', 'green'))
 
     // Mempertahankan sesi agar tetap nyala
@@ -50,7 +50,7 @@ const start = (aruga = new Client()) => {
         }
         // kondisi ketika seseorang dikick/keluar dari group
         if (event.action === 'remove' && event.who !== host) {
-            await aruga.sendTextWithMentions(event.chat, `@${event.who.replace('@c.us', '')}\n Telah Meninggal Dunia\nSelamat menempuh hidup baru🔪`)
+            await aruga.sendTextWithMentions(event.chat, `@${event.who.replace('@c.us', '')}\n Telah Keluar Grup\nSelamat Tinggal...🔪`)
         }
     })
 
